@@ -1,4 +1,6 @@
 name: _build (reusable matrix build)
+on:
+  workflow_call:
 
 # MATRIX build (drafted 2026-07-12): each flavor (standard/ludashi/pubg) builds in
 # its OWN parallel job. Because each runner now packages exactly ONE ~588MB APK, the
@@ -20,6 +22,7 @@ name: _build (reusable matrix build)
 #   their real input, so each build stays identical to a from-scratch build.
 
 on:
+
   workflow_call:
     inputs:
       release_number:
